@@ -1,0 +1,72 @@
+extends layout
+
+block content
+  div
+    .container
+      .row
+        .col-sm-3
+          .panel.panel-primary(style='margin-right:-10px;')
+            .panel-heading
+              span.glyphicon.glyphicon-user  
+              span 在线成员
+            .panel-body
+              .msg-list-body.user-content
+                ul
+                 
+            .panel-footer
+              .btn-group
+                button.btn.btn-primary(type='button')
+                  span.glyphicon.glyphicon-home
+                button.btn.btn-primary(type='button')
+                  span.glyphicon.glyphicon-user
+                button.btn.btn-primary(type='button')
+                  span.glyphicon.glyphicon-film
+                button.btn.btn-primary(type='button')
+                  span.glyphicon.glyphicon-music
+                button.btn.btn-primary(type='button')
+                  span.glyphicon.glyphicon-heart
+                button.btn.btn-primary(type='button')
+                  span.glyphicon.glyphicon-envelope
+        .col-sm-9
+          .panel.panel-primary
+            .panel-heading
+              span.glyphicon.glyphicon-time  
+              span#times
+              span#spanuser.pull-right 
+            .panel-body
+              .msg-list-body.msg-content
+                
+                
+            .panel-footer
+              .input-group
+                .input-group-addon
+                  a(href='#')
+                    img(src='img/bq.png')
+                .input-group-addon(style='padding-bottom:0px;')
+                  label(style='position:relative;')
+                    img(src='img/jt.jpg', title='send images', style='cursor:pointer;')
+                    input#sendImage(value='images', style='display:none;', type='file' )
+                input#msg.form-control(placeholder='请输入聊天内容', onkeydown='javascript:void(0);', type='text')
+                span.input-group-btn
+                  button#sendMsg.btn.btn-primary(type='button') 发送/Send
+    #myModal.modal.fade(aria-hidden='true', style='display: none;', tabindex='-1')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h4#myModalLabel.modal-title 请设置聊天昵称
+          .modal-body
+            .form-group
+              .input-group
+                .input-group-addon 昵称
+                input#username.form-control(value='Keal', onkeydown='javascript:void(0);', type='text')
+          .modal-footer
+            input#btn-setName.btn.btn-primary(value='应用昵称', type='button')
+    #setMsgToOne.modal.fade(tabindex='-1')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h4#myModalLabel1.modal-title
+          .modal-body
+            input#input_msgToOne.form-control(onkeydown='javascript:void(0);', type='text')
+          .modal-footer
+            input#btn_toOne.btn.btn-primary(value='发送/Send', type='button')
